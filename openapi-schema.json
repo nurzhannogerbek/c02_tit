@@ -1,0 +1,216 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Persons",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {
+    "/persons/{id}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "Get User Info by User ID",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "User Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "404": {
+            "description": "User Not Found"
+          }
+        },
+        "operationId": "get-persons-id",
+        "description": "Retrieve entry for person with the specified id (still delivered as a single entry inside an array)"
+      },
+      "delete": {
+        "summary": "",
+        "operationId": "delete-persons-id",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          }
+        },
+        "description": "Remove person specified by id"
+      },
+      "put": {
+        "summary": "",
+        "operationId": "put-persons-id",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          }
+        },
+        "description": "Update person specified by id",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Person"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/persons": {
+      "post": {
+        "summary": "Create New User",
+        "operationId": "post-persons",
+        "responses": {
+          "200": {
+            "description": "User Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "400": {
+            "description": "Missing Required Information"
+          },
+          "409": {
+            "description": "Email Already Taken"
+          }
+        },
+        "description": "Create a new person.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Person"
+              }
+            }
+          }
+        }
+      },
+      "parameters": [],
+      "get": {
+        "summary": "",
+        "operationId": "get-persons",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          }
+        },
+        "description": "Get list of persons"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Person": {
+        "title": "Person",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "first_name": {
+            "type": "string"
+          },
+          "last_name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          }
+        },
+        "x-examples": {
+          "example-1": {
+            "id": 0,
+            "first_name": "John",
+            "last_name": "Smith",
+            "email": "user@example.com"
+          }
+        }
+      },
+      "Result": {
+        "title": "Result",
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Person"
+            }
+          },
+          "error": {
+            "type": "object",
+            "description": "object literal holding error messages keyed to either a field name or \"non_field_errors\" if not applicable\n\n```json\n{\n  \"first_name\": [\"required field\"],\n  \"non_field_errors\": [\"something more general went wrong\"]\n}\n```"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "x-examples": {
+          "Example": {
+            "data": [
+              {
+                "id": 0,
+                "first_name": "John",
+                "last_name": "Smith",
+                "email": "user@example.com"
+              }
+            ],
+            "error": {}
+          },
+          "Error-example": {
+            "data": [],
+            "error": {
+              "first_name": [
+                "This field is required"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
