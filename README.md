@@ -37,32 +37,32 @@ The [POSTMAN](https://www.postman.com/) tool was used to manual testing of the A
 
 1. `GET` request. Get a list of all persons.
 
-![](https://github.com/nurzhannogerbek/c02_tit/tree/master/screenshots/1.png)
+![](https://github.com/nurzhannogerbek/c02_tit/blob/main/screenshots/1.png)
 
 2. `GET` request. Get the information of a certain person by id. The result of the request is successful.
 
-![](https://github.com/nurzhannogerbek/c02_tit/tree/master/screenshots/2.png)
+![](https://github.com/nurzhannogerbek/c02_tit/blob/main/screenshots/2.png)
 
 3. `GET` request. Get the information of a certain person by id. The result of the request is unsuccessful.
 
-![](https://github.com/nurzhannogerbek/c02_tit/tree/master/screenshots/3.png)
+![](https://github.com/nurzhannogerbek/c02_tit/blob/main/screenshots/3.png)
 
 4. `POST` request. Create a new person. The result of the request is successful.
 
-![](https://github.com/nurzhannogerbek/c02_tit/tree/master/screenshots/4.png)
+![](https://github.com/nurzhannogerbek/c02_tit/blob/main/screenshots/4.png)
 
 5. `POST` request. Create a new person. The result of the request is unsuccessful cause the person with such email is exist.
 
-![](https://github.com/nurzhannogerbek/c02_tit/tree/master/screenshots/5.png)
+![](https://github.com/nurzhannogerbek/c02_tit/blob/main/screenshots/5.png)
 
 6. `POST` request. Create a new person. The result of the request is unsuccessful cause some fields were missing in Request Body.
 
-![](https://github.com/nurzhannogerbek/c02_tit/tree/master/screenshots/6.png)
+![](https://github.com/nurzhannogerbek/c02_tit/blob/main/screenshots/6.png)
 
 7. `PUT` request. Update the information of a certain person by id. The result of the request is successful.
 
-![](https://github.com/nurzhannogerbek/c02_tit/tree/master/screenshots/7.png)
+![](https://github.com/nurzhannogerbek/c02_tit/blob/main/screenshots/7.png)
 
 8. `DELETE` request. Delete the information of a certain person by id. The result of the request is successful.
 
-![](https://github.com/nurzhannogerbek/c02_tit/tree/master/screenshots/8.png)
+![](https://github.com/nurzhannogerbek/c02_tit/blob/main/screenshots/8.png)
