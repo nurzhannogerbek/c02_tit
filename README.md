@@ -37,7 +37,7 @@ The [POSTMAN](https://www.postman.com/) tool was used to manual testing of the A
 
 1. `GET` request. Get a list of all persons.
 
-![](https://github.com/nurzhannogerbek/c02_tit/blob/main/screenshots/1.png)
+![](./screenshots/1.png)
 
 2. `GET` request. Get the information of a certain person by id. The result of the request is successful.
 
